@@ -14,7 +14,6 @@ The pipeline should also support visualization of the segmented structures in bo
 
 The dataset used for this task is **ToothFairy2**, a public CBCT segmentation dataset containing annotated volumetric scans.
 
----
 
 ## 2. Dataset
 
@@ -23,21 +22,16 @@ Reference: https://ditto.ing.unimore.it/toothfairy2/
 
 Dataset structure:
 
-```
 imagesTr/   → CBCT scans (input volumes)
 labelsTr/   → voxel-wise segmentation masks
-```
 
 Example pair:
 
-```
 imagesTr/ToothFairy2F_014_0000.mha
 labelsTr/ToothFairy2F_014.mha
-```
 
 The labels correspond to anatomical structures and teeth using the **FDI numbering system**.
 
----
 
 ## 3. Pipeline Architecture
 
@@ -114,9 +108,7 @@ cbct-segmentation
 
 Create a Python environment and install dependencies:
 
-```
 pip install -r requirements.txt
-```
 
 Main dependencies:
 
@@ -132,31 +124,23 @@ Main dependencies:
 
 ### Step 1 – Convert CBCT scan to NIfTI
 
-```
 python convert_to_nifti.py imagesTr/ToothFairy2F_014_0000.mha demo/scan.nii.gz
-```
 
 ---
 
 ### Step 2 – Run Model Inference
 
-```
 python predict.py
-```
 
 This generates the segmentation mask:
 
-```
 demo/mask.nii.gz
-```
 
 ---
 
 ### Step 3 – Visualize Segmentation
 
-```
 python viewer.py
-```
 
 This launches an interactive 3D visualization showing:
 
@@ -168,12 +152,9 @@ This launches an interactive 3D visualization showing:
 ## 7. Demo Output
 
 Example output folder:
-
-```
 demo/
    scan.nii.gz
    mask.nii.gz
-```
 
 These files demonstrate the inference pipeline on a sample CBCT volume.
 
