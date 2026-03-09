@@ -1,0 +1,10 @@
+numpy
+nibabel
+SimpleITK
+scikit-image
+pyvista
+vtk
+flask
+torch
+torchvision
+nnunetv2
